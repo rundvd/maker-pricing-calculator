@@ -8,20 +8,21 @@
 <link rel="canonical" href="https://rundvd.github.io/maker-pricing-calculator/crochet-pricing-calculator.html">
 <meta property="og:title" content="Crochet Pricing Calculator: Price Your Work">
 <meta property="og:description" content="Use a crochet pricing calculator to count yarn, notions, labor, waste, and Etsy fees. See why a $38 sale can lose money after paying for your time.">
+<link rel="icon" href="https://rundvd.github.io/maker-pricing-calculator/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--dark:#0F172A;--acc:#16A34A;--acc2:#86EFAC;--light:#F1F5F9;--input:#FFF4C2;--mut:#64748B;--line:#E2E8F0;--card:#fff;--text:#0F172A}
+:root{--dark:#22302A;--acc:#C4532F;--acc2:#F2C94C;--light:#F1ECE1;--input:#FFF4C2;--mut:#5E6B63;--line:#E6DFD1;--card:#FFFDF8;--text:#22302A}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Inter,system-ui,sans-serif;background:#F8FAFC;color:var(--text);line-height:1.5}
+body{font-family:"Work Sans",system-ui,sans-serif;background:#F6F1E7;color:var(--text);line-height:1.5}
 header{background:var(--dark);color:#fff;padding:40px 16px 34px}
 .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
 header .wrap{padding:0}
-.brand{font-weight:800;letter-spacing:.22em;color:var(--acc2);font-size:13px}
-h1{font-size:clamp(28px,5vw,44px);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin:10px 0 8px}
-header p{color:#CBD5E1;font-size:17px;max-width:640px}
+.brand{font-family:Fraunces,serif;font-weight:700;color:var(--acc2);font-size:22px}
+h1{font-family:Fraunces,serif;font-size:clamp(30px,5vw,48px);font-weight:700;letter-spacing:-.02em;line-height:1.1;margin:10px 0 8px}
+header p{color:#D9D2C3;font-size:17px;max-width:640px}
 .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 0}
-.tab{border:2px solid #334155;background:transparent;color:#E2E8F0;font:600 15px Inter,sans-serif;padding:8px 16px;border-radius:999px;cursor:pointer}
+.tab{border:2px solid #3F4A44;background:transparent;color:#E6DFD1;font:600 15px "Work Sans",sans-serif;padding:8px 16px;border-radius:999px;cursor:pointer}
 .tab[aria-selected=true]{background:var(--acc);border-color:var(--acc);color:#fff}
 main{padding:28px 0 40px}
 .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
@@ -31,41 +32,41 @@ h2{font-size:18px;font-weight:800;margin-bottom:4px}
 .sub{color:var(--mut);font-size:14px;margin-bottom:14px}
 fieldset{border:0;margin-top:14px}
 legend{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--acc);margin-bottom:6px}
-.row{display:grid;grid-template-columns:1fr 140px;gap:10px;align-items:center;padding:6px 0;border-bottom:1px solid #F1F5F9}
+.row{display:grid;grid-template-columns:1fr 140px;gap:10px;align-items:center;padding:6px 0;border-bottom:1px solid #F1ECE1}
 .row label{font-size:14.5px}
 .row small{display:block;color:var(--mut);font-size:12.5px}
-input,select{width:100%;font:500 15px Inter,sans-serif;padding:8px 10px;border:1px solid #CBD5E1;border-radius:8px;background:var(--input);text-align:right}
+input,select{width:100%;font:500 15px "Work Sans",sans-serif;padding:8px 10px;border:1px solid #D9D2C3;border-radius:8px;background:var(--input);text-align:right}
 select{text-align:left;background:#fff}
 .out{position:sticky;top:16px;align-self:start}
 .kpi{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
 .kpi b{font-variant-numeric:tabular-nums;font-size:17px}
-.price{background:#DCFCE7;border-radius:12px;padding:16px;margin:12px 0}
-.price .lab{font-size:12px;font-weight:800;letter-spacing:.12em;color:#14532D}
-.price .big{font-size:42px;font-weight:800;color:#14532D;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.price{background:#FBE3D6;border-radius:12px;padding:16px;margin:12px 0}
+.price .lab{font-size:12px;font-weight:800;letter-spacing:.12em;color:#9C3F22}
+.price .big{font-size:42px;font-weight:800;color:#9C3F22;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .warn{color:#991B1B;font-size:13.5px;margin-top:8px}
 .cta{background:var(--dark);color:#fff;border-radius:14px;padding:22px;margin-top:24px}
 .cta h3{font-size:20px;font-weight:800;margin-bottom:8px}
-.cta ul{margin:8px 0 14px 18px;color:#CBD5E1;font-size:14.5px}
+.cta ul{margin:8px 0 14px 18px;color:#D9D2C3;font-size:14.5px}
 .btn{display:inline-block;background:var(--acc);color:#fff;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:10px}
-.btn.alt{background:transparent;border:2px solid #334155;margin-left:6px}
+.btn.alt{background:transparent;border:2px solid #3F4A44;margin-left:6px}
 .note{color:var(--mut);font-size:13px;margin-top:22px}
 footer{border-top:1px solid var(--line);padding:22px 0;color:var(--mut);font-size:13px}
 .how{margin-top:28px}
 .how h2{margin-bottom:8px}
-.how p{font-size:15px;color:#334155;margin-bottom:10px;max-width:760px}
+.how p{font-size:15px;color:#3F4A44;margin-bottom:10px;max-width:760px}
 
 .article{max-width:760px;margin-top:30px} .article h2{font-size:24px;margin:30px 0 10px} .article h3{font-size:18px;margin:22px 0 6px}
-.article p,.article li{font-size:16px;color:#334155;margin-bottom:10px} .article ul,.article ol{margin:0 0 12px 22px}
-.article table{border-collapse:collapse;margin:12px 0;font-size:15px} .article td,.article th{border:1px solid #E2E8F0;padding:6px 10px;text-align:left}
-nav.guides{font-size:14px;color:#64748B;margin-top:28px;line-height:2} nav.guides a{color:#16A34A;font-weight:600;margin-right:12px;text-decoration:none}
-nav.guides a[aria-current]{color:#0F172A}
+.article p,.article li{font-size:16px;color:#3F4A44;margin-bottom:10px} .article ul,.article ol{margin:0 0 12px 22px}
+.article table{border-collapse:collapse;margin:12px 0;font-size:15px} .article td,.article th{border:1px solid #E6DFD1;padding:6px 10px;text-align:left}
+nav.guides{font-size:14px;color:#5E6B63;margin-top:28px;line-height:2} nav.guides a{color:#C4532F;font-weight:600;margin-right:12px;text-decoration:none}
+nav.guides a[aria-current]{color:#22302A}
 </style>
 </head>
 <body>
 <header><div class="wrap">
-  <div class="brand">COSTCALIPER</div>
+  <div class="brand">tidy margin</div>
   <h1>Crochet Pricing Calculator and Pricing Guide</h1>
-  <p>Find the true cost of one item, a price that keeps your margin after marketplace fees, and what you earn per machine-hour.</p>
+  <p>Find the true cost of one item, a price that keeps your margin after marketplace fees, and what your time really earns.</p>
   <div class="tabs" role="tablist" id="tabs"></div>
 </div></header>
 
@@ -78,7 +79,7 @@ nav.guides a[aria-current]{color:#0F172A}
     </section>
     <aside class="card out" aria-live="polite">
       <h2>Result per item</h2>
-      <div class="price"><div class="lab">SUGGESTED PRICE</div><div class="big" id="price">$0.00</div><div style="font-size:13px;color:#14532D">Rounded to .49 / .99, keeps your target margin after fees</div></div>
+      <div class="price"><div class="lab">SUGGESTED PRICE</div><div class="big" id="price">$0.00</div><div style="font-size:13px;color:#9C3F22">Rounded to .49 / .99, keeps your target margin after fees</div></div>
       <div class="kpi"><span>Material</span><b id="o_mat"></b></div>
       <div class="kpi r_m"><span>Machine wear</span><b id="o_mach"></b></div>
       <div class="kpi r_m"><span>Electricity</span><b id="o_elec"></b></div>
@@ -98,7 +99,7 @@ nav.guides a[aria-current]{color:#0F172A}
 
   <section class="cta">
     <h3>Pricing a whole shop, not one item?</h3>
-    <div style="color:#CBD5E1;font-size:15px">The CostCaliper workbook (Excel + Google Sheets) does this for up to 60 products at once, plus:</div>
+    <div style="color:#D9D2C3;font-size:15px">The Tidy Margin workbook (Excel + Google Sheets) does this for up to 60 products at once, plus:</div>
     <ul>
       <li>Custom job quotes with quantity breaks and a printable customer quote</li>
       <li>Side-by-side channel comparison: Etsy, Shopify, Amazon Handmade, Square, direct</li>
@@ -106,9 +107,9 @@ nav.guides a[aria-current]{color:#0F172A}
       <li>1,000-order sales log and a profit dashboard by month, channel and product</li>
       <li>Machine and material libraries, inventory, and a Formula Audit sheet</li>
     </ul>
-    <a class="btn" id="buy" href="https://davidrundus.gumroad.com/l/ishash">Price your whole <span id="buyEd"></span> range, $12.99 once</a>
-    <a class="btn alt" id="buyAll" href="https://davidrundus.gumroad.com/l/tvdvdx">5 machine editions, $34.99</a>
-    <div style="color:#CBD5E1;font-size:13px;margin-top:10px">Excel + Google Sheets · No subscription · Instant download · <a href="https://davidrundus.gumroad.com" style="color:#86EFAC">All 8 crafts</a></div>
+    <a class="btn" id="buy" href="https://tidymargin.gumroad.com/l/crochet-pricing-spreadsheet">Price your whole <span id="buyEd"></span> range, $12.99 once</a>
+    <a class="btn alt" id="buyAll" href="https://tidymargin.gumroad.com/l/multi-machine-maker-bundle">5 machine editions, $34.99</a>
+    <div style="color:#D9D2C3;font-size:13px;margin-top:10px">Excel + Google Sheets · No subscription · Instant download · <a href="https://tidymargin.gumroad.com" style="color:#F2C94C">All 8 crafts</a></div>
   </section>
 
   <article class="article"><p>A crochet pricing calculator shows what your yarn and working time cost and whether a sale pays you. Use it for crochet or knitting projects, especially pieces that take many hours but use little material.</p>
@@ -141,7 +142,7 @@ nav.guides a[aria-current]{color:#0F172A}
 <p>Yes, enter yarn use and time for the knitted item just as you would for crochet. Include swatches, blocking, seaming, and any notions left in the piece. Measure your own working time because a knitting pattern's size alone does not tell you its labor cost.</p>
 <h3>Why does my $38 price show a loss?</h3>
 <p>The example's $36.36 cost includes $30.00 for two hours of labor, and Etsy fees add $4.06. Those amounts exceed the $38.00 selling price, leaving negative $2.42 in profit. Your options are yours to weigh: a higher price, a faster pattern, a lower labor rate you are comfortable with, or keeping the price because you enjoy the work. The calculator just shows what each choice pays.</p>
-<p>The full CostCaliper crochet and knitting workbook lets you compare prices for several patterns.</p></article>
+<p>The full Tidy Margin crochet and knitting workbook lets you compare prices for several patterns.</p></article>
   <section class="how">
     <h2>How the price is calculated</h2>
     <p><strong>True cost</strong> = material + machine wear (purchase price ÷ expected life hours, plus upkeep) + electricity (watts × hours × your rate) + hands-on labor + packaging, then a failure allowance for runs you have to redo.</p>
@@ -150,11 +151,11 @@ nav.guides a[aria-current]{color:#0F172A}
     <p class="note">Fee presets reflect published US rates as of 2026 and can change. Check your own platform's fee page. This calculator is a pricing aid, not financial or tax advice. Nothing you type leaves your browser.</p>
   </section>
 </main>
-<footer><div class="wrap"><nav class="guides"><span>Guides:</span> <a href="https://rundvd.github.io/maker-pricing-calculator/3d-print-pricing-calculator.html">3D print</a> <a href="https://rundvd.github.io/maker-pricing-calculator/laser-engraving-pricing-calculator.html">Laser</a> <a href="https://rundvd.github.io/maker-pricing-calculator/embroidery-pricing-calculator.html">Embroidery</a> <a href="https://rundvd.github.io/maker-pricing-calculator/sublimation-pricing-calculator.html">Sublimation</a> <a href="https://rundvd.github.io/maker-pricing-calculator/vinyl-decal-pricing-calculator.html">Vinyl & HTV</a> <a href="https://rundvd.github.io/maker-pricing-calculator/candle-pricing-calculator.html">Candle</a> <a href="https://rundvd.github.io/maker-pricing-calculator/bakery-pricing-calculator.html">Bakery</a> <a href="https://rundvd.github.io/maker-pricing-calculator/crochet-pricing-calculator.html" aria-current=page>Crochet & knitting</a> <a href="https://rundvd.github.io/maker-pricing-calculator/etsy-fee-calculator.html">Etsy fees</a></nav><br>CostCaliper · Pricing tools for makers, built by David Rundus, a mechanical engineering student, so your prices add up.</div></footer>
+<footer><div class="wrap"><nav class="guides"><span>Guides:</span> <a href="https://rundvd.github.io/maker-pricing-calculator/3d-print-pricing-calculator.html">3D print</a> <a href="https://rundvd.github.io/maker-pricing-calculator/laser-engraving-pricing-calculator.html">Laser</a> <a href="https://rundvd.github.io/maker-pricing-calculator/embroidery-pricing-calculator.html">Embroidery</a> <a href="https://rundvd.github.io/maker-pricing-calculator/sublimation-pricing-calculator.html">Sublimation</a> <a href="https://rundvd.github.io/maker-pricing-calculator/vinyl-decal-pricing-calculator.html">Vinyl & HTV</a> <a href="https://rundvd.github.io/maker-pricing-calculator/candle-pricing-calculator.html">Candle</a> <a href="https://rundvd.github.io/maker-pricing-calculator/bakery-pricing-calculator.html">Bakery</a> <a href="https://rundvd.github.io/maker-pricing-calculator/crochet-pricing-calculator.html" aria-current=page>Crochet & knitting</a> <a href="https://rundvd.github.io/maker-pricing-calculator/etsy-fee-calculator.html">Etsy fees</a></nav><br>Tidy Margin · Pricing tools for makers, built by David Rundus, a mechanical engineering student, so your prices add up.</div></footer>
 
 <script>
-const G = "https://davidrundus.gumroad.com/l/";
-const LINKS = {"print3d": "https://davidrundus.gumroad.com/l/unrvec", "laser": "https://davidrundus.gumroad.com/l/cnwnf", "embroidery": "https://davidrundus.gumroad.com/l/otcivq", "sublimation": "https://davidrundus.gumroad.com/l/qqmyrc", "vinyl": "https://davidrundus.gumroad.com/l/vpdgr", "all": "https://davidrundus.gumroad.com/l/tvdvdx", "candle": "https://davidrundus.gumroad.com/l/kunofq", "bakery": "https://davidrundus.gumroad.com/l/rlqjak", "crochet": "https://davidrundus.gumroad.com/l/ishash"};
+const G = "https://tidymargin.gumroad.com/l/";
+const LINKS = {"print3d": "https://tidymargin.gumroad.com/l/3d-print-pricing-spreadsheet", "laser": "https://tidymargin.gumroad.com/l/laser-engraving-pricing-spreadsheet", "embroidery": "https://tidymargin.gumroad.com/l/embroidery-pricing-spreadsheet", "sublimation": "https://tidymargin.gumroad.com/l/sublimation-pricing-spreadsheet", "vinyl": "https://tidymargin.gumroad.com/l/vinyl-htv-pricing-spreadsheet", "all": "https://tidymargin.gumroad.com/l/multi-machine-maker-bundle", "candle": "https://tidymargin.gumroad.com/l/candle-pricing-spreadsheet", "bakery": "https://tidymargin.gumroad.com/l/bakery-pricing-spreadsheet", "crochet": "https://tidymargin.gumroad.com/l/crochet-pricing-spreadsheet"};
 const FEES = {
   "Etsy":[0.065,0.03,0.25,0.20], "Etsy + Offsite Ads sale":[0.215,0.03,0.25,0.20],
   "Shopify Basic (online)":[0,0.029,0.30,0], "Amazon Handmade":[0.15,0,0,0],
