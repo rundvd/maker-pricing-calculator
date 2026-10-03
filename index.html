@@ -91,7 +91,7 @@ nav.guides a[aria-current]{color:#0F172A}
       <div class="kpi"><span><strong>Profit</strong></span><b id="o_profit"></b></div>
       <div class="kpi"><span>Margin</span><b id="o_margin"></b></div>
       <div class="kpi" id="r_pph"><span>Profit per machine-hour</span><b id="o_pph"></b></div>
-      <div class="kpi"><span><strong>Your real hourly pay</strong> (labor + profit)</span><b id="o_hourly"></b></div>
+      <div class="kpi"><span><strong>Est. earnings per hands-on hour</strong> (labor + profit)</span><b id="o_hourly"></b></div>
       <div class="warn" id="warn"></div>
     </aside>
   </div>
@@ -106,8 +106,9 @@ nav.guides a[aria-current]{color:#0F172A}
       <li>1,000-order sales log and a profit dashboard by month, channel and product</li>
       <li>Machine and material libraries, inventory, and a Formula Audit sheet</li>
     </ul>
-    <a class="btn" id="buy" href="https://davidrundus.gumroad.com/l/unrvec">Get the <span id="buyEd"></span> workbook</a>
-    <a class="btn alt" id="buyAll" href="https://davidrundus.gumroad.com/l/tvdvdx">All 5 editions</a>
+    <a class="btn" id="buy" href="https://davidrundus.gumroad.com/l/unrvec">Price your whole <span id="buyEd"></span> range, $12.99 once</a>
+    <a class="btn alt" id="buyAll" href="https://davidrundus.gumroad.com/l/tvdvdx">5 machine editions, $34.99</a>
+    <div style="color:#CBD5E1;font-size:13px;margin-top:10px">Excel + Google Sheets · No subscription · Instant download · <a href="https://davidrundus.gumroad.com" style="color:#86EFAC">All 8 crafts</a></div>
   </section>
 
   <section class="how">
@@ -118,7 +119,7 @@ nav.guides a[aria-current]{color:#0F172A}
     <p class="note">Fee presets reflect published US rates as of 2026 and can change. Check your own platform's fee page. This calculator is a pricing aid, not financial or tax advice. Nothing you type leaves your browser.</p>
   </section>
 </main>
-<footer><div class="wrap"><nav class="guides"><span>Guides:</span> <a href="https://rundvd.github.io/maker-pricing-calculator/3d-print-pricing-calculator.html">3D print</a> <a href="https://rundvd.github.io/maker-pricing-calculator/laser-engraving-pricing-calculator.html">Laser</a> <a href="https://rundvd.github.io/maker-pricing-calculator/embroidery-pricing-calculator.html">Embroidery</a> <a href="https://rundvd.github.io/maker-pricing-calculator/sublimation-pricing-calculator.html">Sublimation</a> <a href="https://rundvd.github.io/maker-pricing-calculator/vinyl-decal-pricing-calculator.html">Vinyl & HTV</a> <a href="https://rundvd.github.io/maker-pricing-calculator/candle-pricing-calculator.html">Candle</a> <a href="https://rundvd.github.io/maker-pricing-calculator/bakery-pricing-calculator.html">Bakery</a> <a href="https://rundvd.github.io/maker-pricing-calculator/crochet-pricing-calculator.html">Crochet & knitting</a> <a href="https://rundvd.github.io/maker-pricing-calculator/etsy-fee-calculator.html">Etsy fees</a></nav><br>CostCaliper · Pricing tools for makers</div></footer>
+<footer><div class="wrap"><nav class="guides"><span>Guides:</span> <a href="https://rundvd.github.io/maker-pricing-calculator/3d-print-pricing-calculator.html">3D print</a> <a href="https://rundvd.github.io/maker-pricing-calculator/laser-engraving-pricing-calculator.html">Laser</a> <a href="https://rundvd.github.io/maker-pricing-calculator/embroidery-pricing-calculator.html">Embroidery</a> <a href="https://rundvd.github.io/maker-pricing-calculator/sublimation-pricing-calculator.html">Sublimation</a> <a href="https://rundvd.github.io/maker-pricing-calculator/vinyl-decal-pricing-calculator.html">Vinyl & HTV</a> <a href="https://rundvd.github.io/maker-pricing-calculator/candle-pricing-calculator.html">Candle</a> <a href="https://rundvd.github.io/maker-pricing-calculator/bakery-pricing-calculator.html">Bakery</a> <a href="https://rundvd.github.io/maker-pricing-calculator/crochet-pricing-calculator.html">Crochet & knitting</a> <a href="https://rundvd.github.io/maker-pricing-calculator/etsy-fee-calculator.html">Etsy fees</a></nav><br>CostCaliper · Pricing tools for makers, built by David Rundus, a mechanical engineering student, so your prices add up.</div></footer>
 
 <script>
 const G = "https://davidrundus.gumroad.com/l/";
@@ -156,7 +157,7 @@ const ED = {
     mach:[["mins","Cut + press time per item","minutes",5],["mprice","Cutter + press price","$",600],["life","Expected life","hours",3000],["upkeep","Upkeep per hour","$ (blades, mats)",0.20],["watts","Average power draw","watts (press)",900]],
     lab:[["hands","Weeding & hands-on time","minutes per item",12]], fail:3}
 };
-ED.candle = {name:"Candle", sub:"Soy, coconut or paraffin blends. Weigh one finished candle minus the empty jar for wax + fragrance.",
+ED.candle = {name:"Candle", sub:"Soy, coconut or paraffin blends. Enter wax-only weight per candle; fragrance is calculated from the load %.",
   mat:[["wax","Wax per candle","oz",6],["waxp","Wax price","$ per lb",3.5],["fo","Fragrance load","% of wax weight",9],["fop","Fragrance oil price","$ per oz",1.84],["jar","Jar + lid","$ each",2.9],["wick","Wick, sticker and labels","$ per candle",0.45]],
   matCost:v=>v.wax*v.waxp/16+v.wax*v.fo/100*v.fop+v.jar+v.wick, mach:[], lab:[["hands","Hands-on time","minutes per candle (batch time / candles)",8]], fail:4, def:{}};
 ED.bakery = {name:"Bakery", sub:"Cookies, cakes, cupcakes, bread. Cost the batch from your recipe, then split it per unit you sell.",
@@ -164,7 +165,7 @@ ED.bakery = {name:"Bakery", sub:"Cookies, cakes, cupcakes, bread. Cost the batch
   matCost:v=>v.ing/Math.max(v.units,1)+v.box,
   mach:[["mins","Oven time per unit","minutes (batch oven time / units)",13],["mprice","Oven price","$",900],["life","Expected life","hours",10000],["upkeep","Upkeep per hour","$",0.03],["watts","Average oven draw","watts (gas: about 600)",2000]],
   lab:[["hands","Hands-on time per unit","minutes (mixing, decorating, packing)",67]], fail:5, def:{labrate:20, margin:30, pack:0.15}};
-ED.crochet = {name:"Crochet & Knit", sub:"Type the price you charge today in Your price to see what you really earn per hour.",
+ED.crochet = {name:"Crochet & Knit", sub:"Type the price you charge today in Your price, then try a few prices to compare what each pays you per hour.",
   mat:[["yards","Yarn used","yards (from the pattern)",220],["skein","Skein price","$",6.49],["skyd","Yards per skein","yd",315],["waste","Waste","% (tails, swatches)",8],["notions","Notions and labels","$ (eyes, stuffing, tags)",0.4]],
   matCost:v=>v.yards*(1+v.waste/100)*v.skein/Math.max(v.skyd,1)+v.notions, mach:[], lab:[["hands","Time to make it","minutes",120]], fail:2, def:{labrate:15, margin:20, pack:0.35, yourp:38}};
 const COMMON = [["pack","Packaging & other","$ per item",0.60],["labrate","Your labor rate","$ per hour",25],["elec","Electricity rate","$ per kWh",0.18]];
