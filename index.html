@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Maker Pricing Calculator: 3D Print, Laser, Embroidery, Sublimation, Vinyl | CostCaliper</title>
+<meta name="description" content="Free cost and price calculator for 3D printing, laser engraving, embroidery, sublimation and vinyl/HTV. Includes machine wear, electricity, labor, failures and Etsy, Shopify or Square fees.">
+<link rel="canonical" href="https://rundvd.github.io/costcaliper/">
+<meta property="og:title" content="Free Maker Pricing Calculator | CostCaliper">
+<meta property="og:description" content="True cost, a price that keeps your margin after fees, and profit per machine-hour.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--dark:#0F172A;--acc:#16A34A;--acc2:#86EFAC;--light:#F1F5F9;--input:#FFF4C2;--mut:#64748B;--line:#E2E8F0;--card:#fff;--text:#0F172A}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:#F8FAFC;color:var(--text);line-height:1.5}
+header{background:var(--dark);color:#fff;padding:40px 16px 34px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header .wrap{padding:0}
+.brand{font-weight:800;letter-spacing:.22em;color:var(--acc2);font-size:13px}
+h1{font-size:clamp(28px,5vw,44px);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin:10px 0 8px}
+header p{color:#CBD5E1;font-size:17px;max-width:640px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 0}
+.tab{border:2px solid #334155;background:transparent;color:#E2E8F0;font:600 15px Inter,sans-serif;padding:8px 16px;border-radius:999px;cursor:pointer}
+.tab[aria-selected=true]{background:var(--acc);border-color:var(--acc);color:#fff}
+main{padding:28px 0 40px}
+.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+@media(max-width:820px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+h2{font-size:18px;font-weight:800;margin-bottom:4px}
+.sub{color:var(--mut);font-size:14px;margin-bottom:14px}
+fieldset{border:0;margin-top:14px}
+legend{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--acc);margin-bottom:6px}
+.row{display:grid;grid-template-columns:1fr 140px;gap:10px;align-items:center;padding:6px 0;border-bottom:1px solid #F1F5F9}
+.row label{font-size:14.5px}
+.row small{display:block;color:var(--mut);font-size:12.5px}
+input,select{width:100%;font:500 15px Inter,sans-serif;padding:8px 10px;border:1px solid #CBD5E1;border-radius:8px;background:var(--input);text-align:right}
+select{text-align:left;background:#fff}
+.out{position:sticky;top:16px;align-self:start}
+.kpi{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.kpi b{font-variant-numeric:tabular-nums;font-size:17px}
+.price{background:#DCFCE7;border-radius:12px;padding:16px;margin:12px 0}
+.price .lab{font-size:12px;font-weight:800;letter-spacing:.12em;color:#14532D}
+.price .big{font-size:42px;font-weight:800;color:#14532D;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.warn{color:#991B1B;font-size:13.5px;margin-top:8px}
+.cta{background:var(--dark);color:#fff;border-radius:14px;padding:22px;margin-top:24px}
+.cta h3{font-size:20px;font-weight:800;margin-bottom:8px}
+.cta ul{margin:8px 0 14px 18px;color:#CBD5E1;font-size:14.5px}
+.btn{display:inline-block;background:var(--acc);color:#fff;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:10px}
+.btn.alt{background:transparent;border:2px solid #334155;margin-left:6px}
+.note{color:var(--mut);font-size:13px;margin-top:22px}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--mut);font-size:13px}
+.how{margin-top:28px}
+.how h2{margin-bottom:8px}
+.how p{font-size:15px;color:#334155;margin-bottom:10px;max-width:760px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="brand">COSTCALIPER</div>
+  <h1>Free maker pricing calculator</h1>
+  <p>Find the true cost of one item, a price that keeps your margin after marketplace fees, and what you earn per machine-hour.</p>
+  <div class="tabs" role="tablist" id="tabs"></div>
+</div></header>
+
+<main class="wrap">
+  <div class="grid">
+    <section class="card">
+      <h2 id="edTitle"></h2>
+      <div class="sub" id="edSub"></div>
+      <div id="form"></div>
+    </section>
+    <aside class="card out" aria-live="polite">
+      <h2>Result per item</h2>
+      <div class="price"><div class="lab">SUGGESTED PRICE</div><div class="big" id="price">$0.00</div><div style="font-size:13px;color:#14532D">Rounded to .49 / .99, keeps your target margin after fees</div></div>
+      <div class="kpi"><span>Material</span><b id="o_mat"></b></div>
+      <div class="kpi"><span>Machine wear</span><b id="o_mach"></b></div>
+      <div class="kpi"><span>Electricity</span><b id="o_elec"></b></div>
+      <div class="kpi"><span>Labor</span><b id="o_lab"></b></div>
+      <div class="kpi"><span>Packaging &amp; other</span><b id="o_pack"></b></div>
+      <div class="kpi"><span>Failure allowance</span><b id="o_fail"></b></div>
+      <div class="kpi"><span><strong>True cost</strong></span><b id="o_cost"></b></div>
+      <div class="kpi"><span>Fees at this price</span><b id="o_fees"></b></div>
+      <div class="kpi"><span><strong>Profit</strong></span><b id="o_profit"></b></div>
+      <div class="kpi"><span>Margin</span><b id="o_margin"></b></div>
+      <div class="kpi"><span>Profit per machine-hour</span><b id="o_pph"></b></div>
+      <div class="warn" id="warn"></div>
+    </aside>
+  </div>
+
+  <section class="cta">
+    <h3>Pricing a whole shop, not one item?</h3>
+    <div style="color:#CBD5E1;font-size:15px">The CostCaliper workbook (Excel + Google Sheets) does this for up to 60 products at once, plus:</div>
+    <ul>
+      <li>Custom job quotes with quantity breaks and a printable customer quote</li>
+      <li>Side-by-side channel comparison: Etsy, Shopify, Amazon Handmade, Square, direct</li>
+      <li>Quote vs Actual: see which estimate is costing you money</li>
+      <li>1,000-order sales log and a profit dashboard by month, channel and product</li>
+      <li>Machine and material libraries, inventory, and a Formula Audit sheet</li>
+    </ul>
+    <a class="btn" id="buy" href="#">Get the <span id="buyEd"></span> workbook</a>
+    <a class="btn alt" id="buyAll" href="#">All 5 editions</a>
+  </section>
+
+  <section class="how">
+    <h2>How the price is calculated</h2>
+    <p><strong>True cost</strong> = material + machine wear (purchase price ÷ expected life hours, plus upkeep) + electricity (watts × hours × your rate) + hands-on labor + packaging, then a failure allowance for runs you have to redo.</p>
+    <p><strong>Suggested price</strong> = (true cost + fixed fees) ÷ (1 − percentage fees − target margin), rounded up to the next .49 or .99. That way the margin you asked for is what is left after the marketplace takes its share.</p>
+    <p><strong>Profit per machine-hour</strong> tells you which products deserve your machine time. A cheap item that runs fast can beat an expensive one that ties up the machine all day.</p>
+    <p class="note">Fee presets reflect published US rates as of 2026 and can change. Check your own platform's fee page. This calculator is a pricing aid, not financial or tax advice. Nothing you type leaves your browser.</p>
+  </section>
+</main>
+<footer><div class="wrap">CostCaliper · Pricing tools for makers</div></footer>
+
+<script>
+const G = "https://davidrundus.gumroad.com/l/";
+const LINKS = { print3d:G+"unrvec", laser:G+"cnwnf", embroidery:G+"otcivq", sublimation:G+"qqmyrc", vinyl:G+"vpdgr", all:G+"tvdvdx" };
+const FEES = {
+  "Etsy":[0.065,0.03,0.25,0.20], "Etsy + Offsite Ads sale":[0.215,0.03,0.25,0.20],
+  "Shopify Basic (online)":[0,0.029,0.30,0], "Amazon Handmade":[0.15,0,0,0],
+  "Square (in person)":[0,0.026,0.15,0], "PayPal goods & services":[0,0.0299,0.49,0], "Direct / cash":[0,0,0,0]
+};
+// Each edition: label, subtitle, material helper, defaults
+const ED = {
+  print3d:{name:"3D Print", sub:"FDM or resin. Use the grams and print time from your slicer.",
+    mat:[["grams","Filament / resin used","g per item, incl. supports",48],["spool","Spool price","$ per spool",20],["spoolg","Spool size","g",1000],["waste","Purge & waste","%",5]],
+    matCost:v=>v.grams*(1+v.waste/100)*v.spool/v.spoolg,
+    mach:[["mins","Print time per item","minutes",210],["mprice","Printer price","$",449],["life","Expected life","hours",5000],["upkeep","Upkeep per hour","$ (nozzles, belts, plates)",0.10],["watts","Average power draw","watts",110]],
+    lab:[["hands","Hands-on time","minutes per item",6]], fail:5},
+  laser:{name:"Laser", sub:"Diode, CO2 or fiber. Engrave or cut time from your software.",
+    mat:[["blank","Blank or sheet cost per item","$ (sheet price ÷ items per sheet)",1.80],["mask","Masking / finish","$ per item",0.15]],
+    matCost:v=>v.blank+v.mask,
+    mach:[["mins","Run time per item","minutes",12],["mprice","Laser price","$",1200],["life","Expected life","hours",6000],["upkeep","Upkeep per hour","$ (lenses, tube, filters)",0.25],["watts","Average power draw","watts incl. exhaust",350]],
+    lab:[["hands","Hands-on time","minutes per item (load, weed, clean)",5]], fail:3},
+  embroidery:{name:"Embroidery", sub:"Use the stitch count from your digitizing software.",
+    mat:[["blank","Blank (cap, shirt, towel)","$",6.50],["stitches","Stitch count","stitches",8000],["thread","Thread cost","$ per 1,000 stitches",0.04],["backing","Stabilizer & backing","$ per item",0.30]],
+    matCost:v=>v.blank+v.stitches/1000*v.thread+v.backing,
+    mach:[["mins","Sew time per item","minutes (stitches ÷ effective SPM)",13],["mprice","Machine price","$",1500],["life","Expected life","hours",5000],["upkeep","Upkeep per hour","$ (needles, service)",0.20],["watts","Average power draw","watts",90]],
+    lab:[["hands","Hands-on time","minutes (hoop, trim, attend)",8]], fail:3},
+  sublimation:{name:"Sublimation", sub:"Printer plus heat press. Enter the blank and ink for one item.",
+    mat:[["blank","Blank (mug, shirt, tumbler)","$",3.20],["ink","Ink","$ per item",0.35],["paper","Sublimation paper","$ per item",0.20]],
+    matCost:v=>v.blank+v.ink+v.paper,
+    mach:[["mins","Press + print time per item","minutes",6],["mprice","Printer + press price","$",650],["life","Expected life","hours",3000],["upkeep","Upkeep per hour","$ (tape, sheets, pads)",0.15],["watts","Average power draw","watts (press)",1400]],
+    lab:[["hands","Hands-on time","minutes per item",5]], fail:4},
+  vinyl:{name:"Vinyl & HTV", sub:"Cricut, Silhouette or similar. Weeding is priced as labor.",
+    mat:[["area","Vinyl area (all layers)","sq in",60],["roll","Vinyl price","$ per roll",14],["rollarea","Roll area","sq in (12in × 60in = 720)",720],["waste","Waste","%",15],["blank","Blank (shirt, cup), if any","$",4.50]],
+    matCost:v=>v.area*(1+v.waste/100)*v.roll/v.rollarea+v.blank,
+    mach:[["mins","Cut + press time per item","minutes",5],["mprice","Cutter + press price","$",600],["life","Expected life","hours",3000],["upkeep","Upkeep per hour","$ (blades, mats)",0.20],["watts","Average power draw","watts (press)",900]],
+    lab:[["hands","Weeding & hands-on time","minutes per item",12]], fail:3}
+};
+const COMMON = [["pack","Packaging & other","$ per item",0.60],["labrate","Your labor rate","$ per hour",25],["elec","Electricity rate","$ per kWh",0.18]];
+let cur = "print3d";
+const $ = id => document.getElementById(id);
+const money = x => (x<0?"-":"")+"$"+Math.abs(x).toFixed(2);
+function field([k,l,s,d],grp){return `<div class="row"><label for="${k}">${l}<small>${s}</small></label><input id="${k}" type="number" step="any" min="0" value="${d}" data-k="${k}"></div>`}
+function render(){
+  const e = ED[cur];
+  $("edTitle").textContent = e.name + " cost & price calculator";
+  $("edSub").textContent = e.sub;
+  let h = `<fieldset><legend>MATERIAL</legend>${e.mat.map(field).join("")}</fieldset>`;
+  h += `<fieldset><legend>MACHINE</legend>${e.mach.map(field).join("")}</fieldset>`;
+  h += `<fieldset><legend>LABOR & OVERHEAD</legend>${e.lab.map(field).join("")}${COMMON.map(field).join("")}${field(["failp","Failure allowance","% of runs redone",e.fail])}</fieldset>`;
+  h += `<fieldset><legend>SELLING</legend><div class="row"><label for="chan">Sales channel<small>fee preset</small></label><select id="chan">${Object.keys(FEES).map(c=>`<option>${c}</option>`).join("")}</select></div>${field(["margin","Target profit margin","% of price",40])}${field(["ship","Shipping charged to buyer","$ (Etsy charges fees on it)",0])}</fieldset>`;
+  $("form").innerHTML = h;
+  $("form").oninput = calc;
+  document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-selected", t.dataset.k===cur));
+  $("buyEd").textContent = e.name; $("buy").href = LINKS[cur]; $("buyAll").href = LINKS.all;
+  calc();
+}
+function calc(){
+  const v = {}; document.querySelectorAll("#form input").forEach(i=>v[i.dataset.k]=Math.max(0,parseFloat(i.value)||0));
+  const e = ED[cur], hrs = v.mins/60;
+  const mat = e.matCost(v);
+  const mach = hrs*((v.life>0? v.mprice/v.life:0)+v.upkeep);
+  const elec = hrs*v.watts/1000*v.elec;
+  const lab = v.hands/60*v.labrate;
+  const base = mat+mach+elec+lab+v.pack;
+  const fail = base*v.failp/100;
+  const cost = base+fail;
+  const [tx,pp,pf,lst] = FEES[$("chan").value];
+  const pct = tx+pp, fixed = pf+lst + (tx+pp)*v.ship;
+  const m = v.margin/100;
+  const warn = [];
+  let price = 0;
+  if (pct+m >= 1){ warn.push("Fees plus target margin are 100% or more. Lower the margin."); }
+  else { const raw = (cost+fixed)/(1-pct-m); price = Math.max(0.49, Math.ceil((raw-0.49)/0.5 - 1e-9)*0.5 + 0.49); }
+  const fees = price>0 ? price*pct+fixed : 0;
+  const profit = price-cost-fees;
+  $("price").textContent = money(price);
+  $("o_mat").textContent=money(mat); $("o_mach").textContent=money(mach); $("o_elec").textContent=money(elec);
+  $("o_lab").textContent=money(lab); $("o_pack").textContent=money(v.pack); $("o_fail").textContent=money(fail);
+  $("o_cost").textContent=money(cost); $("o_fees").textContent=money(fees); $("o_profit").textContent=money(profit);
+  $("o_margin").textContent = price>0 ? (profit/price*100).toFixed(0)+"%" : "–";
+  $("o_pph").textContent = hrs>0 ? money(profit/hrs) : "–";
+  if (v.mins<=0) warn.push("Enter the machine time per item.");
+  if (v.life<=0) warn.push("Expected life must be above zero to price machine wear.");
+  $("warn").textContent = warn.join(" ");
+}
+$("tabs").innerHTML = Object.entries(ED).map(([k,e])=>`<button class="tab" role="tab" data-k="${k}">${e.name}</button>`).join("");
+$("tabs").onclick = ev => { const k = ev.target.dataset && ev.target.dataset.k; if(k){cur=k; history.replaceState(null,"","#"+k); render();} };
+if (location.hash && ED[location.hash.slice(1)]) cur = location.hash.slice(1);
+render();
+</script>
+</body>
+</html>
