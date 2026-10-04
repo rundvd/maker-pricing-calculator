@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soap Pricing Calculator: How to Price Handmade Soap</title>
+<meta name="description" content="Use a soap pricing calculator to count oils, lye, scent, molds, labor, failed batches and Etsy fees. See a worked example for a 4 oz bar and a wholesale check.">
+<link rel="canonical" href="https://rundvd.github.io/maker-pricing-calculator/soap-pricing-calculator.html">
+<meta property="og:title" content="Soap Pricing Calculator: How to Price Handmade Soap">
+<meta property="og:description" content="Use a soap pricing calculator to count oils, lye, scent, molds, labor, failed batches and Etsy fees. See a worked example for a 4 oz bar and a wholesale check.">
+<link rel="icon" href="https://rundvd.github.io/maker-pricing-calculator/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--dark:#22302A;--acc:#C4532F;--acc2:#F2C94C;--light:#F1ECE1;--input:#FFF4C2;--mut:#5E6B63;--line:#E6DFD1;--card:#FFFDF8;--text:#22302A}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Work Sans",system-ui,sans-serif;background:#F6F1E7;color:var(--text);line-height:1.5}
+header{background:var(--dark);color:#fff;padding:40px 16px 34px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header .wrap{padding:0}
+.brand{font-family:Fraunces,serif;font-weight:700;color:var(--acc2);font-size:22px}
+h1{font-family:Fraunces,serif;font-size:clamp(30px,5vw,48px);font-weight:700;letter-spacing:-.02em;line-height:1.1;margin:10px 0 8px}
+header p{color:#D9D2C3;font-size:17px;max-width:640px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 0}
+.tab{border:2px solid #3F4A44;background:transparent;color:#E6DFD1;font:600 15px "Work Sans",sans-serif;padding:8px 16px;border-radius:999px;cursor:pointer}
+.tab[aria-selected=true]{background:var(--acc);border-color:var(--acc);color:#fff}
+main{padding:28px 0 40px}
+.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+@media(max-width:820px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+h2{font-size:18px;font-weight:800;margin-bottom:4px}
+.sub{color:var(--mut);font-size:14px;margin-bottom:14px}
+fieldset{border:0;margin-top:14px}
+legend{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--acc);margin-bottom:6px}
+.row{display:grid;grid-template-columns:1fr 140px;gap:10px;align-items:center;padding:6px 0;border-bottom:1px solid #F1ECE1}
+.row label{font-size:14.5px}
+.row small{display:block;color:var(--mut);font-size:12.5px}
+input,select{width:100%;font:500 15px "Work Sans",sans-serif;padding:8px 10px;border:1px solid #D9D2C3;border-radius:8px;background:var(--input);text-align:right}
+select{text-align:left;background:#fff}
+.out{position:sticky;top:16px;align-self:start}
+.kpi{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.kpi b{font-variant-numeric:tabular-nums;font-size:17px}
+.price{background:#FBE3D6;border-radius:12px;padding:16px;margin:12px 0}
+.price .lab{font-size:12px;font-weight:800;letter-spacing:.12em;color:#9C3F22}
+.price .big{font-size:42px;font-weight:800;color:#9C3F22;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.warn{color:#991B1B;font-size:13.5px;margin-top:8px}
+.cta{background:var(--dark);color:#fff;border-radius:14px;padding:22px;margin-top:24px}
+.cta h3{font-size:20px;font-weight:800;margin-bottom:8px}
+.cta ul{margin:8px 0 14px 18px;color:#D9D2C3;font-size:14.5px}
+.btn{display:inline-block;background:var(--acc);color:#fff;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:10px}
+.btn.alt{background:transparent;border:2px solid #3F4A44;margin-left:6px}
+.note{color:var(--mut);font-size:13px;margin-top:22px}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--mut);font-size:13px}
+.how{margin-top:28px}
+.how h2{margin-bottom:8px}
+.how p{font-size:15px;color:#3F4A44;margin-bottom:10px;max-width:760px}
+
+.article{max-width:760px;margin-top:30px} .article h2{font-size:24px;margin:30px 0 10px} .article h3{font-size:18px;margin:22px 0 6px}
+.article p,.article li{font-size:16px;color:#3F4A44;margin-bottom:10px} .article ul,.article ol{margin:0 0 12px 22px}
+.article table{border-collapse:collapse;margin:12px 0;font-size:15px} .article td,.article th{border:1px solid #E6DFD1;padding:6px 10px;text-align:left}
+nav.guides{font-size:14px;color:#5E6B63;margin-top:28px;line-height:2} nav.guides a{color:#C4532F;font-weight:600;margin-right:12px;text-decoration:none}
+nav.guides a[aria-current]{color:#22302A}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="brand">tidy margin</div>
+  <h1>Soap Pricing Calculator and Pricing Guide</h1>
+  <p>Find the true cost of one item, a price that keeps your margin after marketplace fees, and what your time really earns.</p>
+  <div class="tabs" role="tablist" id="tabs"></div>
+</div></header>
+
+<main class="wrap">
+  <div class="grid">
+    <section class="card">
+      <h2 id="edTitle"></h2>
+      <div class="sub" id="edSub"></div>
+      <div id="form"></div>
+    </section>
+    <aside class="card out" aria-live="polite">
+      <h2>Result per item</h2>
+      <div class="price"><div class="lab">SUGGESTED PRICE</div><div class="big" id="price">$0.00</div><div style="font-size:13px;color:#9C3F22">Rounded to .49 / .99, keeps your target margin after fees</div></div>
+      <div class="kpi"><span>Material</span><b id="o_mat"></b></div>
+      <div class="kpi r_m"><span>Machine wear</span><b id="o_mach"></b></div>
+      <div class="kpi r_m"><span>Electricity</span><b id="o_elec"></b></div>
+      <div class="kpi"><span>Labor</span><b id="o_lab"></b></div>
+      <div class="kpi"><span>Packaging &amp; other</span><b id="o_pack"></b></div>
+      <div class="kpi"><span>Failure allowance</span><b id="o_fail"></b></div>
+      <div class="kpi"><span><strong>True cost</strong></span><b id="o_cost"></b></div>
+      <div class="kpi"><span>Price used</span><b id="o_used"></b></div>
+      <div class="kpi"><span>Fees at this price</span><b id="o_fees"></b></div>
+      <div class="kpi"><span><strong>Profit</strong></span><b id="o_profit"></b></div>
+      <div class="kpi"><span>Margin</span><b id="o_margin"></b></div>
+      <div class="kpi" id="r_pph"><span>Profit per machine-hour</span><b id="o_pph"></b></div>
+      <div class="kpi"><span><strong>Est. earnings per hands-on hour</strong> (labor + profit)</span><b id="o_hourly"></b></div>
+      <div class="warn" id="warn"></div>
+    </aside>
+  </div>
+
+  <section class="cta">
+    <h3>Pricing a whole shop, not one item?</h3>
+    <div style="color:#D9D2C3;font-size:15px">The Tidy Margin workbook (Excel + Google Sheets) does this for up to 60 products at once, plus:</div>
+    <ul>
+      <li>Custom job quotes with quantity breaks and a printable customer quote</li>
+      <li>Side-by-side channel comparison: Etsy, Shopify, Amazon Handmade, Square, direct</li>
+      <li>Quote vs Actual: see which estimate is costing you money</li>
+      <li>1,000-order sales log and a profit dashboard by month, channel and product</li>
+      <li>Machine and material libraries, inventory, and a Formula Audit sheet</li>
+    </ul>
+    <a class="btn" id="buy" href="https://tidymargin.gumroad.com/l/soap-pricing-spreadsheet">Price your whole <span id="buyEd"></span> range, $12.99 once</a>
+    <a class="btn alt" id="buyAll" href="https://tidymargin.gumroad.com/l/handmade-maker-bundle">5 handmade editions, $34.99</a>
+    <div style="color:#D9D2C3;font-size:13px;margin-top:10px">Excel + Google Sheets · No subscription · Instant download · <a href="https://tidymargin.gumroad.com" style="color:#F2C94C">All 8 crafts</a></div>
+  </section>
+
+  <article class="article"><p>A soap pricing calculator shows what one finished bar really costs and what you keep after selling fees. It works for cold process and melt and pour. Use the steps below to price your own bars, then check whether the same price still works when a shop asks for wholesale.</p>
+<h2>How to price soap step by step</h2>
+<p>Start with the oils and butters in one bar. Take the weights from your recipe and divide by the bars you cut from the loaf. Enter the price of your oil blend per pound. If you buy olive, coconut and shea separately, a quick weighted average is fine for a first price, and the full workbook costs each oil on its own line.</p>
+<p>Next, add the lye in one bar and what you pay per pound. The calculator doesn't work out lye amounts for you. Run every recipe through a lye calculator first and copy its lye weight here; this page prices what you weigh, it doesn't check whether the recipe is safe.</p>
+<p>Add scent and color per bar, then mold wear, the band and the label. A $24.99 loaf mold that lasts a couple of hundred pours only adds a few cents to each bar, but bands, labels and wraps add up fast, so count them every time.</p>
+<p>Enter your hands-on minutes for one bar: weighing, mixing, pouring, cutting, beveling, wrapping and labeling, divided by the bars in the batch. Multiply by the hourly rate you want to pay yourself. Cure time doesn't count as hands-on time, because you aren't working while the bars sit on the rack.</p>
+<p>Finally, add a failure allowance for seized batches, soda ash you can't clean up and bars that crack, then pick a sales channel and a target margin. Etsy fees come out of the selling price, so they're part of the math, not an afterthought.</p>
+<h2>Worked example</h2>
+<p>Enter 3.2 oz of oils and butters per bar at $4.50 per pound, 0.45 oz of lye at $4.00 per pound, $0.35 for scent and color, and $0.30 for mold wear, the band and the label. Add 7 minutes of hands-on time per bar and $0.15 for packaging. Set your labor rate to $25 an hour, the failure allowance to 3%, the channel to Etsy and the target margin to 40%. Leave shipping and your price at $0.</p>
+<p>The oils cost about $0.90 and the lye about $0.11. With scent, color, mold wear, band and label, displayed material cost is $1.66. The calculator shows $2.92 for labor, $0.15 for packaging and $0.14 for failures, so the true cost of one bar is $4.87.</p>
+<p>The suggested price is $10.99. At that price, Etsy fees are $1.49, profit is $4.62 and margin is 42%. The calculator rounds what it displays, so adding up the rounded figures by hand can be off by a cent.</p>
+<h2>What most sellers forget</h2>
+<ul>
+<li>Oil that stays in the pot and the stick blender still costs money. Add a small waste allowance to your oil weight.</li>
+<li>Lye and distilled water are cheap per bar, but they're still part of the recipe.</li>
+<li>Molds, liners and cutters wear out. Spread their price over the pours they last.</li>
+<li>Cigar bands, labels and shrink wrap belong in every bar's cost, not in a yearly guess.</li>
+<li>Batches you rebatch or throw out are a real cost, even if they're rare.</li>
+<li>Wholesale buyers need room for their own markup, so check your wholesale price before you agree to a 50% discount.</li>
+<li>Etsy charges fees on shipping you collect, not just on the bar.</li>
+</ul>
+<h2>Your real hourly pay</h2>
+<p>Add profit and labor pay, then divide by your hands-on hours to see what one sale pays you for the time you spent. In the example, $4.62 profit plus $2.92 labor pay over 7 minutes gives about $64.64 an hour, using the calculator's unrounded values. Use it to compare a simple loaf bar with swirled tops or embeds that take twice as long. It doesn't mean every hour in your business earns that much.</p>
+<h2>FAQ</h2>
+<h3>How much should I charge for a bar of handmade soap?</h3>
+<p>Add oils, lye, scent, packaging, labor, failed batches and selling fees before you choose a margin. The worked example suggests $10.99 for a 4 oz bar sold on Etsy. Different oils, a bigger bar or a fancier wrap need a new calculation.</p>
+<h3>How do I price soap for wholesale?</h3>
+<p>Work out the true cost first, including labels and any bulk packing. A common wholesale price is half of retail, so check that half your retail price still covers that cost and leaves some profit. If it doesn't, raise retail or skip wholesale for that bar.</p>
+<h3>Should cure time count as labor?</h3>
+<p>No. Count only the minutes you're actively making, cutting and packing. Cure time ties up shelf space and money, so plan batches ahead, but it doesn't add hands-on labor to each bar.</p>
+<h3>Is melt and pour soap priced the same way?</h3>
+<p>Yes. Enter the base you melt as the oils line and leave lye at zero. Melt and pour usually takes less hands-on time, which changes the price more than the base does.</p>
+<p>The full Tidy Margin soap workbook costs every oil, mold and label line by line, and checks wholesale for each product.</p></article>
+  <section class="how">
+    <h2>How the price is calculated</h2>
+    <p><strong>True cost</strong> = material + machine wear (purchase price ÷ expected life hours, plus upkeep) + electricity (watts × hours × your rate) + hands-on labor + packaging, then a failure allowance for runs you have to redo.</p>
+    <p><strong>Suggested price</strong> = (true cost + fixed fees) ÷ (1 − percentage fees − target margin), rounded up to the next .49 or .99. That way the margin you asked for is what is left after the marketplace takes its share.</p>
+    <p><strong>Profit per machine-hour</strong> tells you which products deserve your machine time. A cheap item that runs fast can beat an expensive one that ties up the machine all day.</p>
+    <p class="note">Fee presets reflect published US rates as of 2026 and can change. Check your own platform's fee page. This calculator is a pricing aid, not financial or tax advice. Nothing you type leaves your browser.</p>
+  </section>
+</main>
+<footer><div class="wrap"><nav class="guides"><span>Guides:</span> <a href="https://rundvd.github.io/maker-pricing-calculator/3d-print-pricing-calculator.html">3D print</a> <a href="https://rundvd.github.io/maker-pricing-calculator/laser-engraving-pricing-calculator.html">Laser</a> <a href="https://rundvd.github.io/maker-pricing-calculator/embroidery-pricing-calculator.html">Embroidery</a> <a href="https://rundvd.github.io/maker-pricing-calculator/sublimation-pricing-calculator.html">Sublimation</a> <a href="https://rundvd.github.io/maker-pricing-calculator/vinyl-decal-pricing-calculator.html">Vinyl & HTV</a> <a href="https://rundvd.github.io/maker-pricing-calculator/candle-pricing-calculator.html">Candle</a> <a href="https://rundvd.github.io/maker-pricing-calculator/bakery-pricing-calculator.html">Bakery</a> <a href="https://rundvd.github.io/maker-pricing-calculator/crochet-pricing-calculator.html">Crochet & knitting</a> <a href="https://rundvd.github.io/maker-pricing-calculator/soap-pricing-calculator.html" aria-current=page>Soap</a> <a href="https://rundvd.github.io/maker-pricing-calculator/resin-pricing-calculator.html">Resin</a> <a href="https://rundvd.github.io/maker-pricing-calculator/etsy-fee-calculator.html">Etsy fees</a></nav><br>Tidy Margin · Pricing tools for makers, built by David Rundus, a mechanical engineering student, so your prices add up.</div></footer>
+
+<script>
+const G = "https://tidymargin.gumroad.com/l/";
+const LINKS = {"print3d": "https://tidymargin.gumroad.com/l/3d-print-pricing-spreadsheet", "laser": "https://tidymargin.gumroad.com/l/laser-engraving-pricing-spreadsheet", "embroidery": "https://tidymargin.gumroad.com/l/embroidery-pricing-spreadsheet", "sublimation": "https://tidymargin.gumroad.com/l/sublimation-pricing-spreadsheet", "vinyl": "https://tidymargin.gumroad.com/l/vinyl-htv-pricing-spreadsheet", "all": "https://tidymargin.gumroad.com/l/multi-machine-maker-bundle", "candle": "https://tidymargin.gumroad.com/l/candle-pricing-spreadsheet", "bakery": "https://tidymargin.gumroad.com/l/bakery-pricing-spreadsheet", "crochet": "https://tidymargin.gumroad.com/l/crochet-pricing-spreadsheet", "soap": "https://tidymargin.gumroad.com/l/soap-pricing-spreadsheet", "resin": "https://tidymargin.gumroad.com/l/resin-pricing-spreadsheet", "handmade": "https://tidymargin.gumroad.com/l/handmade-maker-bundle"};
+const FEES = {
+  "Etsy":[0.065,0.03,0.25,0.20], "Etsy + Offsite Ads sale":[0.215,0.03,0.25,0.20],
+  "Shopify Basic (online)":[0,0.029,0.30,0], "Amazon Handmade":[0.15,0,0,0],
+  "Square (in person)":[0,0.026,0.15,0], "PayPal goods & services":[0,0.0299,0.49,0], "Direct / cash":[0,0,0,0]
+};
+// Each edition: label, subtitle, material helper, defaults
+const ED = {
+  print3d:{name:"3D Print", sub:"FDM or resin. Use the grams and print time from your slicer.",
+    mat:[["grams","Filament / resin used","g per item, incl. supports",48],["spool","Spool price","$ per spool",20],["spoolg","Spool size","g",1000],["waste","Purge & waste","%",5]],
+    matCost:v=>v.grams*(1+v.waste/100)*v.spool/v.spoolg,
+    mach:[["mins","Print time per item","minutes",210],["mprice","Printer price","$",449],["life","Expected life","hours",5000],["upkeep","Upkeep per hour","$ (nozzles, belts, plates)",0.10],["watts","Average power draw","watts",110]],
+    lab:[["hands","Hands-on time","minutes per item",6]], fail:5},
+  laser:{name:"Laser", sub:"Diode, CO2 or fiber. Engrave or cut time from your software.",
+    mat:[["blank","Blank or sheet cost per item","$ (sheet price ÷ items per sheet)",1.80],["mask","Masking / finish","$ per item",0.15]],
+    matCost:v=>v.blank+v.mask,
+    mach:[["mins","Run time per item","minutes",12],["mprice","Laser price","$",1200],["life","Expected life","hours",6000],["upkeep","Upkeep per hour","$ (lenses, tube, filters)",0.25],["watts","Average power draw","watts incl. exhaust",350]],
+    lab:[["hands","Hands-on time","minutes per item (load, weed, clean)",5]], fail:3},
+  embroidery:{name:"Embroidery", sub:"Use the stitch count from your digitizing software.",
+    mat:[["blank","Blank (cap, shirt, towel)","$",6.50],["stitches","Stitch count","stitches",8000],["thread","Thread cost","$ per 1,000 stitches",0.04],["backing","Stabilizer & backing","$ per item",0.30]],
+    matCost:v=>v.blank+v.stitches/1000*v.thread+v.backing,
+    mach:[["mins","Sew time per item","minutes (stitches ÷ effective SPM)",13],["mprice","Machine price","$",1500],["life","Expected life","hours",5000],["upkeep","Upkeep per hour","$ (needles, service)",0.20],["watts","Average power draw","watts",90]],
+    lab:[["hands","Hands-on time","minutes (hoop, trim, attend)",8]], fail:3},
+  sublimation:{name:"Sublimation", sub:"Printer plus heat press. Enter the blank and ink for one item.",
+    mat:[["blank","Blank (mug, shirt, tumbler)","$",3.20],["ink","Ink","$ per item",0.35],["paper","Sublimation paper","$ per item",0.20]],
+    matCost:v=>v.blank+v.ink+v.paper,
+    mach:[["mins","Press + print time per item","minutes",6],["mprice","Printer + press price","$",650],["life","Expected life","hours",3000],["upkeep","Upkeep per hour","$ (tape, sheets, pads)",0.15],["watts","Average power draw","watts (press)",1400]],
+    lab:[["hands","Hands-on time","minutes per item",5]], fail:4},
+  vinyl:{name:"Vinyl & HTV", sub:"Cricut, Silhouette or similar. Weeding is priced as labor.",
+    mat:[["area","Vinyl area (all layers)","sq in",60],["roll","Vinyl price","$ per roll",14],["rollarea","Roll area","sq in (12in × 60in = 720)",720],["waste","Waste","%",15],["blank","Blank (shirt, cup), if any","$",4.50]],
+    matCost:v=>v.area*(1+v.waste/100)*v.roll/v.rollarea+v.blank,
+    mach:[["mins","Cut + press time per item","minutes",5],["mprice","Cutter + press price","$",600],["life","Expected life","hours",3000],["upkeep","Upkeep per hour","$ (blades, mats)",0.20],["watts","Average power draw","watts (press)",900]],
+    lab:[["hands","Weeding & hands-on time","minutes per item",12]], fail:3}
+};
+ED.candle = {name:"Candle", sub:"Soy, coconut or paraffin blends. Enter wax-only weight per candle; fragrance is calculated from the load %.",
+  mat:[["wax","Wax per candle","oz",6],["waxp","Wax price","$ per lb",3.5],["fo","Fragrance load","% of wax weight",9],["fop","Fragrance oil price","$ per oz",1.84],["jar","Jar + lid","$ each",2.9],["wick","Wick, sticker and labels","$ per candle",0.45]],
+  matCost:v=>v.wax*v.waxp/16+v.wax*v.fo/100*v.fop+v.jar+v.wick, mach:[], lab:[["hands","Hands-on time","minutes per candle (batch time / candles)",8]], fail:4, def:{}};
+ED.bakery = {name:"Bakery", sub:"Cookies, cakes, cupcakes, bread. Cost the batch from your recipe, then split it per unit you sell.",
+  mat:[["ing","Ingredients per batch","$ (add up your recipe)",13],["units","Units per batch","dozens, cakes or loaves",3],["box","Packaging per unit","$ (box, bags, liners)",1.2]],
+  matCost:v=>v.ing/Math.max(v.units,1)+v.box,
+  mach:[["mins","Oven time per unit","minutes (batch oven time / units)",13],["mprice","Oven price","$",900],["life","Expected life","hours",10000],["upkeep","Upkeep per hour","$",0.03],["watts","Average oven draw","watts (gas: about 600)",2000]],
+  lab:[["hands","Hands-on time per unit","minutes (mixing, decorating, packing)",67]], fail:5, def:{labrate:20, margin:30, pack:0.15}};
+ED.crochet = {name:"Crochet & Knit", sub:"Type the price you charge today in Your price, then try a few prices to compare what each pays you per hour.",
+  mat:[["yards","Yarn used","yards (from the pattern)",220],["skein","Skein price","$",6.49],["skyd","Yards per skein","yd",315],["waste","Waste","% (tails, swatches)",8],["notions","Notions and labels","$ (eyes, stuffing, tags)",0.4]],
+  matCost:v=>v.yards*(1+v.waste/100)*v.skein/Math.max(v.skyd,1)+v.notions, mach:[], lab:[["hands","Time to make it","minutes",120]], fail:2, def:{labrate:15, margin:20, pack:0.35, yourp:38}};
+ED.soap = {name:"Soap", sub:"Cold process or melt & pour. Take lye and water weights from your lye calculator; this prices what you weigh.",
+  mat:[["oils","Oils & butters per bar","oz (from your recipe)",3.2],["oilp","Oil blend price","$ per lb",4.5],["lye","Lye per bar","oz",0.45],["lyep","Lye price","$ per lb",4],["scent","Scent and color","$ per bar",0.35],["mold","Mold wear, band and label","$ per bar",0.30]],
+  matCost:v=>v.oils*v.oilp/16+v.lye*v.lyep/16+v.scent+v.mold, mach:[], lab:[["hands","Hands-on time","minutes per bar (batch time / bars)",7]], fail:3, def:{pack:0.15}};
+ED.resin = {name:"Resin", sub:"Coasters, trays, keychains. Molds are priced per pour, and failed pours are built in.",
+  mat:[["resin","Resin used","oz per item (A + B mixed)",7.5],["kit","Resin kit price","$ per kit",79.99],["kitoz","Kit size","oz (A + B)",128],["color","Mica, ink and inclusions","$ per item",0.80],["moldp","Mold price","$",19.99],["pours","Pours the mold lasts","pours",40],["hard","Cork, blanks and hardware","$ per item",0.50]],
+  matCost:v=>v.resin*v.kit/Math.max(v.kitoz,1)+v.color+v.moldp/Math.max(v.pours,1)+v.hard, mach:[], lab:[["hands","Hands-on time","minutes per item (mix, demold, sand, finish)",25]], fail:7, def:{pack:1.10}};
+const COMMON = [["pack","Packaging & other","$ per item",0.60],["labrate","Your labor rate","$ per hour",25],["elec","Electricity rate","$ per kWh",0.18]];
+let cur = "soap";
+const $ = id => document.getElementById(id);
+const money = x => (x<0?"-":"")+"$"+Math.abs(x).toFixed(2);
+const dv = (k,d) => (ED[cur].def && ED[cur].def[k] !== undefined) ? ED[cur].def[k] : d;
+function field([k,l,s,d],grp){ d = dv(k,d);return `<div class="row"><label for="${k}">${l}<small>${s}</small></label><input id="${k}" type="number" step="any" min="0" value="${d}" data-k="${k}"></div>`}
+function render(){
+  const e = ED[cur];
+  $("edTitle").textContent = e.name + " cost & price calculator";
+  $("edSub").textContent = e.sub;
+  let h = `<fieldset><legend>MATERIAL</legend>${e.mat.map(field).join("")}</fieldset>`;
+  if (e.mach.length) h += `<fieldset><legend>${cur==="bakery"?"OVEN":"MACHINE"}</legend>${e.mach.map(field).join("")}</fieldset>`;
+  h += `<fieldset><legend>LABOR & OVERHEAD</legend>${e.lab.map(field).join("")}${COMMON.filter(f=>e.mach.length||f[0]!=="elec").map(field).join("")}${field(["failp","Failure allowance","% of runs redone",e.fail])}</fieldset>`;
+  h += `<fieldset><legend>SELLING</legend><div class="row"><label for="chan">Sales channel<small>fee preset</small></label><select id="chan">${Object.keys(FEES).map(c=>`<option>${c}</option>`).join("")}</select></div>${field(["margin","Target profit margin","% of price",40])}${field(["ship","Shipping charged to buyer","$ (Etsy charges fees on it)",0])}${field(["yourp","Your price (optional)","$ (0 = use the suggested price)",0])}</fieldset>`;
+  document.querySelectorAll(".r_m,#r_pph").forEach(x=>x.style.display=e.mach.length?"":"none");
+  $("form").innerHTML = h;
+  $("form").oninput = calc;
+  document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-selected", t.dataset.k===cur));
+  $("buyEd").textContent = e.name; $("buy").href = LINKS[cur]; const rec = ["candle","bakery","crochet","soap","resin"].includes(cur); $("buyAll").href = rec ? (LINKS.handmade || "#") : LINKS.all; $("buyAll").textContent = rec ? "5 handmade editions, $34.99" : "5 machine editions, $34.99"; $("buyAll").style.display = (rec && !LINKS.handmade) ? "none" : "";
+  calc();
+}
+function calc(){
+  const v = {}; document.querySelectorAll("#form input").forEach(i=>v[i.dataset.k]=Math.max(0,parseFloat(i.value)||0));
+  const e = ED[cur], hrs = (v.mins||0)/60;
+  const mat = e.matCost(v);
+  const mach = e.mach.length ? hrs*((v.life>0? v.mprice/v.life:0)+v.upkeep) : 0;
+  const elec = e.mach.length ? hrs*v.watts/1000*v.elec : 0;
+  const lab = v.hands/60*v.labrate;
+  const base = mat+mach+elec+lab+v.pack;
+  const fail = base*v.failp/100;
+  const cost = base+fail;
+  const [tx,pp,pf,lst] = FEES[$("chan").value];
+  const pct = tx+pp, fixed = pf+lst + (tx+pp)*v.ship;
+  const m = v.margin/100;
+  const warn = [];
+  let price = 0;
+  if (pct+m >= 1){ warn.push("Fees plus target margin are 100% or more. Lower the margin."); }
+  else { const raw = (cost+fixed)/(1-pct-m); price = Math.max(0.49, Math.ceil((raw-0.49)/0.5 - 1e-9)*0.5 + 0.49); }
+  const used = v.yourp>0 ? v.yourp : price;
+  const fees = used>0 ? used*pct+fixed : 0;
+  const profit = used-cost-fees;
+  $("price").textContent = money(price);
+  $("o_mat").textContent=money(mat); $("o_mach").textContent=money(mach); $("o_elec").textContent=money(elec);
+  $("o_lab").textContent=money(lab); $("o_pack").textContent=money(v.pack); $("o_fail").textContent=money(fail);
+  $("o_cost").textContent=money(cost); $("o_fees").textContent=money(fees); $("o_profit").textContent=money(profit);
+  $("o_used").textContent = money(used);
+  $("o_margin").textContent = used>0 ? (profit/used*100).toFixed(0)+"%" : "–";
+  $("o_pph").textContent = hrs>0 ? money(profit/hrs) : "–";
+  $("o_hourly").textContent = v.hands>0 ? money((profit+lab)/(v.hands/60)) : "–";
+  if (e.mach.length && v.mins<=0) warn.push("Enter the machine time per item.");
+  if (e.mach.length && v.life<=0) warn.push("Expected life must be above zero to price machine wear.");
+  $("warn").textContent = warn.join(" ");
+}
+$("tabs").innerHTML = Object.entries(ED).map(([k,e])=>`<button class="tab" role="tab" data-k="${k}">${e.name}</button>`).join("");
+$("tabs").onclick = ev => { const k = ev.target.dataset && ev.target.dataset.k; if(k){cur=k; history.replaceState(null,"","#"+k); render();} };
+if (location.hash && ED[location.hash.slice(1)]) cur = location.hash.slice(1);
+render();
+</script>
+</body>
+</html>
