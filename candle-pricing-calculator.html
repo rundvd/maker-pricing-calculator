@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Candle Pricing Calculator: How to Price Candles</title>
-<meta name="description" content="Use a candle pricing calculator to count wax, fragrance, jars, labor, failures, and Etsy fees. See a worked example and a wholesale pricing check.">
+<title>Candle Pricing Calculator and How to Price Candles</title>
+<meta name="description" content="Count wax, fragrance load, jars, wicks, labor, failed pours and Etsy fees, then check whether wholesale still pays. Free calculator and worked example.">
 <link rel="canonical" href="https://rundvd.github.io/maker-pricing-calculator/candle-pricing-calculator.html">
-<meta property="og:title" content="Candle Pricing Calculator: How to Price Candles">
-<meta property="og:description" content="Use a candle pricing calculator to count wax, fragrance, jars, labor, failures, and Etsy fees. See a worked example and a wholesale pricing check.">
+<meta property="og:title" content="Candle Pricing Calculator and How to Price Candles">
+<meta property="og:description" content="Count wax, fragrance load, jars, wicks, labor, failed pours and Etsy fees, then check whether wholesale still pays. Free calculator and worked example.">
 <link rel="icon" href="https://rundvd.github.io/maker-pricing-calculator/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -66,7 +66,7 @@ nav.guides a[aria-current]{color:#22302A}
 <header><div class="wrap">
   <div class="brand">tidy margin</div>
   <h1>Candle Pricing Calculator and Pricing Guide</h1>
-  <p>Find the true cost of one item, a price that keeps your margin after marketplace fees, and what your time really earns.</p>
+  <p>Put in your materials and your time. It works out what one item really costs and the price that still leaves your margin after Etsy or Shopify takes its fees.</p>
   <div class="tabs" role="tablist" id="tabs"></div>
 </div></header>
 
@@ -99,59 +99,53 @@ nav.guides a[aria-current]{color:#22302A}
 
   <section class="cta">
     <h3>Pricing a whole shop, not one item?</h3>
-    <div style="color:#D9D2C3;font-size:15px">The Tidy Margin workbook (Excel + Google Sheets) does this for up to 60 products at once, plus:</div>
+    <div style="color:#D9D2C3;font-size:15px">The Tidy Margin workbook does the same math for up to 60 products at once, in Excel or Google Sheets. It also has:</div>
     <ul>
-      <li>Custom job quotes with quantity breaks and a printable customer quote</li>
-      <li>Side-by-side channel comparison: Etsy, Shopify, Amazon Handmade, Square, direct</li>
-      <li>Quote vs Actual: see which estimate is costing you money</li>
-      <li>1,000-order sales log and a profit dashboard by month, channel and product</li>
-      <li>Machine and material libraries, inventory, and a Formula Audit sheet</li>
+      <li>A custom job quote with quantity breaks that you can print for the customer</li>
+      <li>Fee presets for Etsy, Shopify, Amazon Handmade, Square and PayPal, and profit by channel on the Dashboard</li>
+      <li>Quote vs Actual, which shows where your estimates were off after each job</li>
+      <li>A sales log with room for 1,000 orders and a monthly profit dashboard</li>
+      <li>Inventory tracking, and a Formula Audit sheet that walks through the math for any product</li>
     </ul>
     <a class="btn" id="buy" href="https://tidymargin.gumroad.com/l/candle-pricing-spreadsheet">Price your whole <span id="buyEd"></span> range, $12.99 once</a>
     <a class="btn alt" id="buyAll" href="https://tidymargin.gumroad.com/l/handmade-maker-bundle">5 handmade editions, $34.99</a>
-    <div style="color:#D9D2C3;font-size:13px;margin-top:10px">Excel + Google Sheets · No subscription · Instant download · <a href="https://tidymargin.gumroad.com" style="color:#F2C94C">All 8 crafts</a></div>
+    <div style="color:#D9D2C3;font-size:13px;margin-top:10px">Excel + Google Sheets · No subscription · Instant download · <a href="https://tidymargin.gumroad.com" style="color:#F2C94C">All 10 crafts</a></div>
   </section>
 
-  <article class="article"><p>A candle pricing calculator shows what each finished candle costs and what you keep after selling fees. Use the steps below to price your own candles, then check whether the same price works for wholesale orders.</p>
+  <article class="article"><p>Pricing a candle off the cost of wax alone almost always comes out too low, because the jar, the wick, the labels and your time usually cost more than the wax does. This candle pricing calculator adds all of it up, shows what you keep after selling fees, and gives you a way to check whether a wholesale price would still make money.</p>
 <h2>How to price candles step by step</h2>
-<p>Start with the wax in one candle, its price, and the fragrance load. Enter the fragrance oil price separately so a stronger scent does not hide inside a flat material estimate. The calculator uses the wax weight and fragrance percentage to estimate oil used per candle. Weigh a finished test batch to check that your planned fill and actual use match.</p>
-<p>Add the jar and lid, then the wick, warning sticker, and labels. These small items belong in every unit's cost, even if you buy them in bulk. If a supplier charges shipping on a case of jars, spread that expense across the usable jars rather than leaving it out.</p>
-<p>Enter your hands-on minutes for weighing, pouring, trimming, labeling, checking, and packing. Multiply that time by the hourly rate you want to pay yourself. Add packaging and other per-candle costs, then a failure allowance for cracked jars, poor burns, and batches you cannot sell. Count only active work in the labor field; do not treat an unattended cure period as active pouring time.</p>
-<p>Finally, choose a sales channel, target profit margin, and any shipping you charge the buyer. Etsy fees come out of the selling price. A wholesale order may avoid some retail selling fees, but its lower price still has to cover materials, labor, overhead, and your intended profit. Run the numbers again for the wholesale channel and order size before offering a retailer a discount.</p>
+<p>Start with the wax in one candle and what it costs per pound, then the fragrance load and the price of your fragrance oil. Fragrance goes in as its own line on purpose. At a 9% or 10% load it's a real cost, and folding it into a flat "materials" guess hides how much a stronger scent throw costs you. The calculator works out the fragrance oil from the wax weight and the load percentage. Weigh a finished test batch now and then to make sure what you planned to pour is what you actually used.</p>
+<p>Next come the jar and lid, then the wick, the warning sticker and your labels. They're small individually, but every candle needs them. If your jar supplier charges shipping on a case, spread that over the jars you can actually use.</p>
+<p>For labor, count the minutes you're actively working: weighing, melting, pouring, trimming wicks, labeling, checking and packing, divided by the candles in the batch. Multiply by the hourly rate you want to pay yourself. Cure time isn't labor, since you aren't working while the candles sit. Add packaging, then a failure allowance for cracked jars, bad burns and batches you can't sell.</p>
+<p>Last, choose a sales channel, target margin and any shipping you charge. Etsy's fees come out of the selling price. Wholesale skips those retail fees, but the price is much lower, and it still has to cover your materials, time, overhead and some profit.</p>
 <h2>Worked example</h2>
 <p>Enter 6 ounces of wax per candle at a wax price of $3.50, a 9% fragrance load, and fragrance oil priced at $1.84. Add $2.90 for the jar and lid, $0.45 for the wick, sticker, and labels, 8 minutes of hands-on time, and $0.60 for packaging and other costs. Set labor to $25 per hour, the failure allowance to 4%, the sales channel to Etsy, and the target profit margin to 40%. Enter $0 for shipping charged to the buyer and $0 for an optional price.</p>
-<p>The 6 ounces of wax cost about $1.31 when wax is $3.50 per pound. Fragrance adds about $0.99, and the jar, lid, wick, sticker, and labels bring displayed material cost to $5.66. The calculator shows $0.00 for machine use, $0.00 for electricity, $3.33 for labor, $0.60 for packaging, and $0.38 for failures. Total cost is $9.97.</p>
-<p>The suggested price is $20.99. At that price, displayed Etsy fees are $2.44, profit is $8.57, and margin is 41%. The displayed hourly pay is $89.30. The calculator rounds displayed amounts, so a hand calculation from the rounded figures can differ by a cent.</p>
-<h2>What most sellers forget</h2>
-<ul>
-<li>Wax left in a pouring pitcher or lost during testing still costs money.</li>
-<li>A scent may need several wick tests before you have a candle you can sell.</li>
-<li>Broken jars and crooked labels are real unit costs, even when they are uncommon.</li>
-<li>Warning labels, dust covers, and protective shipping material belong in the estimate.</li>
-<li>Wholesale buyers need room for their own markup, so a retail price alone cannot set your wholesale price.</li>
-<li>Etsy fees can apply to shipping charged to the buyer, not just the candle price.</li>
-</ul>
+<p>Six ounces of wax at $3.50 a pound is about $1.31. Fragrance adds about $0.99, and with the jar, lid, wick, sticker and labels, material cost comes to $5.66. The calculator shows $0.00 for machine use and electricity (this example uses no equipment), $3.33 for labor, $0.60 for packaging and $0.38 for failures. Total cost is $9.97.</p>
+<p>The suggested price is $20.99. At that price, Etsy fees are $2.44, profit is $8.57 and margin is 41%. Hourly pay shows as $89.30. Displayed amounts are rounded, so working from the rounded figures by hand can land a cent off.</p>
+<p>Notice the jar. At $2.90 it costs more than twice what the wax does.</p>
+<h2>What candle makers tend to leave out</h2>
+<p>Wax left in the pouring pitcher still cost money. A new scent can take several wick tests before you have a candle you'd sell. Broken jars and crooked labels don't happen often, but they're a real cost when they do. Warning labels, dust covers and shipping padding belong in the price. Wholesale buyers need room to mark your candle up, so your retail price can't be the only thing you check. And Etsy's fees apply to the shipping you charge as well as the candle.</p>
 <h2>Your real hourly pay</h2>
-<p>Use (profit + labor pay) divided by active hours to see what a sale returns for your working time. Here, the displayed $8.57 profit plus $3.33 labor pay over 8 minutes gives about $89.30 per hour using the calculator's unrounded values. This figure is useful when you compare a simple jar candle with a design that takes longer to pour, label, or pack; it is not a promise that every hour in your business earns that amount.</p>
+<p>Hourly pay here is profit plus labor pay, divided by your hands-on hours. In the example, $8.57 profit plus $3.33 labor pay over 8 minutes works out to about $89.30 per hour, using the calculator's unrounded numbers. It's useful for comparing a simple jar candle with a layered or decorated one that takes three times as long to pour and finish. It doesn't mean every hour you put into the business pays that. Marketing, photos and answering messages aren't counted here.</p>
 <h2>FAQ</h2>
 <h3>How much should I charge for a handmade candle?</h3>
-<p>Add wax, fragrance, container, wick, labels, labor, packaging, expected failures, and selling fees before choosing a margin. The worked example suggests $20.99 for its exact inputs. A larger jar or a more expensive oil calls for a new calculation.</p>
+<p>Add up wax, fragrance, the jar, wick, labels, labor, packaging, expected failures and selling fees, then pick a margin. The example suggests $20.99 for its exact inputs. A bigger jar or a pricier fragrance oil means running it again.</p>
 <h3>How do I price candles for wholesale?</h3>
-<p>Calculate the cost and labor for the wholesale order, including any different packaging or delivery work. Choose a wholesale price that leaves profit after those costs, then check whether the retailer can sell at a realistic shelf price. A blanket half-off rule can erase your margin.</p>
+<p>Work out the cost and labor for the wholesale order, including any different packaging or delivery. Shops commonly buy at about half of retail, so check that half your retail price still leaves you a profit after those costs. If it doesn't, raise your retail price or don't wholesale that candle. Blindly offering 50% off can wipe out your margin.</p>
 <h3>Should I include curing time in candle labor?</h3>
-<p>Count minutes when you are actively weighing, pouring, testing, labeling, or packing. Unattended curing does not use the same hands-on labor, although storage space and tied-up inventory can still affect your business costs. Keep those costs in your broader pricing plan.</p>
-<h3>Why is my Etsy candle profit lower than the price minus materials?</h3>
-<p>The difference also pays for your labor, packaging, failed units, and Etsy fees. The $20.99 example has $5.66 in displayed materials but $9.97 in total cost before $2.44 in fees. Compare profit after every line item rather than after wax and jars alone.</p>
-<p>The full Tidy Margin candle workbook lets you price multiple candles and compare the results in one place.</p></article>
+<p>No. Count the minutes you spend weighing, pouring, testing, labeling and packing. Curing takes shelf space and ties up money in stock, which is worth planning around, but it doesn't add labor to each candle.</p>
+<h3>Why is my Etsy candle profit lower than price minus materials?</h3>
+<p>The rest also has to pay for your time, packaging, failed candles and Etsy's fees. In the $20.99 example, materials are $5.66, but total cost is $9.97 before $2.44 in fees. Look at profit after every line, not just after wax and jars.</p>
+<p>The full Tidy Margin candle workbook builds each candle from a recipe of the supplies you actually buy, and shows a wholesale price and wholesale profit for every product.</p></article>
   <section class="how">
     <h2>How the price is calculated</h2>
-    <p><strong>True cost</strong> = material + machine wear (purchase price ÷ expected life hours, plus upkeep) + electricity (watts × hours × your rate) + hands-on labor + packaging, then a failure allowance for runs you have to redo.</p>
-    <p><strong>Suggested price</strong> = (true cost + fixed fees) ÷ (1 − percentage fees − target margin), rounded up to the next .49 or .99. That way the margin you asked for is what is left after the marketplace takes its share.</p>
-    <p><strong>Profit per machine-hour</strong> tells you which products deserve your machine time. A cheap item that runs fast can beat an expensive one that ties up the machine all day.</p>
-    <p class="note">Fee presets reflect published US rates as of 2026 and can change. Check your own platform's fee page. This calculator is a pricing aid, not financial or tax advice. Nothing you type leaves your browser.</p>
+    <p><strong>True cost</strong> = material + machine wear (purchase price ÷ expected life hours, plus upkeep) + electricity (watts × hours × your rate) + hands-on labor + packaging, then a failure allowance for the runs you have to redo.</p>
+    <p><strong>Suggested price</strong> = (true cost + fixed fees) ÷ (1 − percentage fees − target margin), rounded up to the next .49 or .99. So the margin you asked for is what's left after the marketplace takes its cut.</p>
+    <p><strong>Profit per machine-hour</strong> shows which products are worth your machine time. A cheap item that runs fast can earn more per hour than an expensive one that ties up the machine all day.</p>
+    <p class="note">Fee presets use published US rates as of 2026, and platforms do change them, so check your own fee page. This calculator helps with pricing. It isn't financial or tax advice. Nothing you type leaves your browser.</p>
   </section>
 </main>
-<footer><div class="wrap"><nav class="guides"><span>Guides:</span> <a href="https://rundvd.github.io/maker-pricing-calculator/3d-print-pricing-calculator.html">3D print</a> <a href="https://rundvd.github.io/maker-pricing-calculator/laser-engraving-pricing-calculator.html">Laser</a> <a href="https://rundvd.github.io/maker-pricing-calculator/embroidery-pricing-calculator.html">Embroidery</a> <a href="https://rundvd.github.io/maker-pricing-calculator/sublimation-pricing-calculator.html">Sublimation</a> <a href="https://rundvd.github.io/maker-pricing-calculator/vinyl-decal-pricing-calculator.html">Vinyl & HTV</a> <a href="https://rundvd.github.io/maker-pricing-calculator/candle-pricing-calculator.html" aria-current=page>Candle</a> <a href="https://rundvd.github.io/maker-pricing-calculator/bakery-pricing-calculator.html">Bakery</a> <a href="https://rundvd.github.io/maker-pricing-calculator/crochet-pricing-calculator.html">Crochet & knitting</a> <a href="https://rundvd.github.io/maker-pricing-calculator/soap-pricing-calculator.html">Soap</a> <a href="https://rundvd.github.io/maker-pricing-calculator/resin-pricing-calculator.html">Resin</a> <a href="https://rundvd.github.io/maker-pricing-calculator/etsy-fee-calculator.html">Etsy fees</a></nav><br>Tidy Margin · Pricing tools for makers, built by David Rundus, a mechanical engineering student, so your prices add up.</div></footer>
+<footer><div class="wrap"><nav class="guides"><span>Guides:</span> <a href="https://rundvd.github.io/maker-pricing-calculator/3d-print-pricing-calculator.html">3D print</a> <a href="https://rundvd.github.io/maker-pricing-calculator/laser-engraving-pricing-calculator.html">Laser</a> <a href="https://rundvd.github.io/maker-pricing-calculator/embroidery-pricing-calculator.html">Embroidery</a> <a href="https://rundvd.github.io/maker-pricing-calculator/sublimation-pricing-calculator.html">Sublimation</a> <a href="https://rundvd.github.io/maker-pricing-calculator/vinyl-decal-pricing-calculator.html">Vinyl & HTV</a> <a href="https://rundvd.github.io/maker-pricing-calculator/candle-pricing-calculator.html" aria-current=page>Candle</a> <a href="https://rundvd.github.io/maker-pricing-calculator/bakery-pricing-calculator.html">Bakery</a> <a href="https://rundvd.github.io/maker-pricing-calculator/crochet-pricing-calculator.html">Crochet & knitting</a> <a href="https://rundvd.github.io/maker-pricing-calculator/soap-pricing-calculator.html">Soap</a> <a href="https://rundvd.github.io/maker-pricing-calculator/resin-pricing-calculator.html">Resin</a> <a href="https://rundvd.github.io/maker-pricing-calculator/etsy-fee-calculator.html">Etsy fees</a></nav><br>Tidy Margin · Pricing tools for makers, built by David Rundus, a mechanical engineering student.</div></footer>
 
 <script>
 const G = "https://tidymargin.gumroad.com/l/";
